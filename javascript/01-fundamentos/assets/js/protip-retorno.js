@@ -19,4 +19,5 @@ const imprimeArgumentos2 = ( edad, ...args ) => {
     return args;
 }
 
-imprimeArgumentos2(10, true, false, 'Juan', 'Hola');
+const argumentos = imprimeArgumentos2(10, true, false, 'Juan', 'Hola');
+console.log( argumentos );
