@@ -1,6 +1,5 @@
 import { valorCarta, pedirCarta, crearCartaHTML } from "./";
 
-
 /**
  * turno de la computadora
  * @param {Number} puntosMinimos puntos mínimos que la computadora necesita para ganar

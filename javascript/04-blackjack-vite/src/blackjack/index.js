@@ -1,7 +1,6 @@
 import _ from 'underscore';
 import { crearDeck, pedirCarta, valorCarta, turnoComputadora, crearCartaHTML } from './usecases';
 
-
 /**
  * 2C = Two of Clubs
  * 2D = Two of Diamonds
@@ -13,8 +12,7 @@ let deck         = [];
 const tipos      = ['C','D','H','S'];
 const especiales = ['A','J','Q','K'];
 
-let puntosJugador = 0,
-    puntosComputadora = 0;
+let puntosJugador = 0;
 
 // Referencias del HTML
 const btnPedir   = document.querySelector('#btnPedir');
@@ -56,7 +54,6 @@ btnPedir.addEventListener('click', () => {
 btnDetener.addEventListener('click', () => {
     btnPedir.disabled   = true;
     btnDetener.disabled = true;
-
     turnoComputadora( puntosJugador, puntosHTML, divCartasComputadora, deck );
 });
 
@@ -67,16 +64,14 @@ btnNuevo.addEventListener('click', () => {
     deck = crearDeck( tipos, especiales );
 
     puntosJugador     = 0;
-    puntosComputadora = 0;
-    
+
     puntosHTML[0].innerText = 0;
     puntosHTML[1].innerText = 0;
 
-    divCartasComputadora.innerHTML = '';
     divCartasJugador.innerHTML = '';
+    divCartasComputadora.innerHTML = '';
 
     btnPedir.disabled   = false;
     btnDetener.disabled = false;
-
 });
 
