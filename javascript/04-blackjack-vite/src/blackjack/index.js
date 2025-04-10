@@ -59,8 +59,8 @@ btnDetener.addEventListener('click', () => {
 
 btnNuevo.addEventListener('click', () => {
 
-    console.clear();
     deck = [];
+    console.clear();
     deck = crearDeck( tipos, especiales );
 
     puntosJugador     = 0;
