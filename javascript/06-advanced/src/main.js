@@ -1,9 +1,15 @@
 import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
-import { environmentsComponent } from './concepts/01-environments';
+import { asyncAwait2Component } from './concepts/07-async-await';
+import { asyncAwaitComponent } from './concepts/06-async-await';
+import { asyncComponent } from './concepts/05-async';
 import { callbacksComponent } from './concepts/02-callbacks';
+import { environmentsComponent } from './concepts/01-environments';
 import { promiseComponent } from './concepts/03-promises';
+import { promiseRaceComponent } from './concepts/04-promise-race';
+import { forAwaitComponent } from './concepts/08-for-await';
+
 
 
 document.querySelector('#app').innerHTML = `
@@ -26,4 +32,9 @@ const element = document.querySelector('.card');
 
 // environmentsComponent( element );
 // callbacksComponent( element );
-promiseComponent( element );
+// promiseComponent( element );
+// promiseRaceComponent( element );
+// asyncComponent( element );
+// asyncAwaitComponent( element );
+// asyncAwait2Component( element );
+forAwaitComponent( element );
