@@ -46,6 +46,7 @@ const tableDeleteListener = async (event) => {
         await deleteUserById(id);
         await usersStore.reloadPage();
         document.querySelector('#current-page').innerText = usersStore.getCurrentPage();
+        renderTable();
     }catch (error){
         console.log(error);
         alert('No se pudo eliminar el usuario.');
@@ -64,25 +65,24 @@ export const renderTable = ( element ) => {
         element.append(table);
         table.addEventListener('click', tableSelectListener);
         table.addEventListener('click', tableDeleteListener);
-
-        let tableHTML = '';
-        users.forEach( user => {
-            tableHTML += `
-                <tr>
-                    <td>${ user.id }</td>
-                    <td>${ user.balance }</td>
-                    <td>${ user.firstName }</td>
-                    <td>${ user.lastName }</td>
-                    <td>${ user.isActive }</td>
-                    <td>
-                        <a href="#/" class="select-user" data-id="${ user.id }">Select</a>
-                        |
-                        <a href="#/" class="delete-user" data-id="${ user.id }">Delete</a>
-                    </td>
-                </tr>
-            `;
-        });
-        table.querySelector('tbody').innerHTML = tableHTML;
-
     }
+    let tableHTML = '';
+    users.forEach( user => {
+        tableHTML += `
+            <tr>
+                <td>${ user.id }</td>
+                <td>${ user.balance }</td>
+                <td>${ user.firstName }</td>
+                <td>${ user.lastName }</td>
+                <td>${ user.isActive }</td>
+                <td>
+                    <a href="#/" class="select-user" data-id="${ user.id }">Select</a>
+                    |
+                    <a href="#/" class="delete-user" data-id="${ user.id }">Delete</a>
+                </td>
+            </tr>
+        `;
+    });
+    
+    table.querySelector('tbody').innerHTML = tableHTML;    
 }

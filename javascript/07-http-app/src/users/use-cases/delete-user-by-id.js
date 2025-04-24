@@ -1,8 +1,3 @@
-
-
-
-
-
 /**
  * 
  * @param {String|Number} id 
@@ -13,8 +8,6 @@ export const deleteUserById = async ( id ) =>{
         method: 'DELETE'
     });
 
-    const deleteResult = await res.json();    
-    console.log({ deleteResult });
-    
+    const deleteResult = await res.json();   
     return true;    
 }

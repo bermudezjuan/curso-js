@@ -13,7 +13,8 @@ export const showModal = async ( id ) => {
 
     const user = await getUserById( id );
     setFormValues( user );
-      
+    console.log(loadedUser);
+     
 }
 
 export const hideModal = () => {
@@ -53,21 +54,19 @@ export const renderModal = ( element, saveUserCallback ) => {
 
     form.addEventListener( 'submit', async (event) => {
         event.preventDefault();
-        const formData = new FormData( form );
+        const formData = new FormData( form );        
         const userLike = { ...loadedUser };
-        for (const [ key, value] of formData) {
+        
+        for (const [ key, value] of formData) {                        
             if (key === 'balance'){
                 userLike[key] = +value;
                 continue;
-            }
-            
-            if (key === 'isActive'){
-                userLike[key] = value === 'on' ? true : false;
-                continue;
-            }
-            
+            }            
             userLike[key] = value;            
-        }   
+        }
+        userLike.isActive = form.querySelector('[name="isActive"]').checked;
+        console.log(userLike);
+           
         await saveUserCallback( userLike );
         hideModal();  
     });
