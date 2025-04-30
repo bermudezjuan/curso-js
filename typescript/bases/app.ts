@@ -1,7 +1,8 @@
-const msg: string = 'Hola mundo!!!';
-const hero = {
-    name: 'Ironman',
-    age: 45,
-}
-hero.age = 50;
-console.log(hero);
+(() => {
+    const a : number = 10;
+    console.log(a);
+})()
+
+
+
+
