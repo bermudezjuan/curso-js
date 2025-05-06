@@ -9,5 +9,5 @@
     }
 
     const a = callBatman();
-    console.log(a)
+    // console.log(a)
 })();
