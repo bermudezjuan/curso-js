@@ -1,26 +1,76 @@
-// Funciones Básicas
-const sumar = ( a: number, b: number ): number =>  a + b;
+// Objetos
 
-const contar = ( heroes: string[] ): number =>  heroes.length;
-
-const superHeroes: string[] = ["Flash", "Arrow", "Superman", "Linterna Verde"];
-contar(superHeroes);
-
-//Parámetros por defecto
-const llamarBatman = ( llamar: boolean = true ): void => {
-  if( llamar ) {
-    console.log("Batiseñal activada");
-  }
+type Vehiculo = {
+  carroceria: string;
+  modelo: string;
+  antibalas: boolean;
+  pasajeros: number;
+  disparar?: () => void;
 }
 
-llamarBatman();
+const batimovil: Vehiculo = {
+  carroceria: "Negra",
+  modelo: "6x6",
+  antibalas: true,
+  pasajeros:4
+};
 
-// Rest?
-const unirheroes = ( ...personas: string[] ): string => personas.join(", ");
+const bumblebee: Vehiculo = {
+  carroceria: "Amarillo con negro",
+  modelo: "4x2",
+  antibalas: true,
+  pasajeros:4,
+  disparar(){ // El método disparar es opcional
+    console.log("Disparando");
+  }
+};
 
-// Tipo funcion
-const noHaceNada = ( numero: number, texto: string, booleano: boolean, arreglo: string[] )=> {}
 
-// Crear el tipo de funcion que acepte la funcion "noHaceNada"
-let noHaceNadaTampoco: ( x: number, y: string, z: boolean, w: string[] ) => void;
-noHaceNadaTampoco = noHaceNada
+// Villanos debe de ser un arreglo de objetos personalizados
+type villano = {
+  nombre: string;
+  edad: number | undefined;
+  mutante: boolean;
+}
+
+const villanos: villano[] = [{
+  nombre:"Lex Luthor",
+  edad: 54,
+  mutante:false
+},{
+  nombre: "Erik Magnus Lehnsherr",
+  edad: 49,
+  mutante: true
+},{
+  nombre: "James Logan",
+  edad: undefined,
+  mutante: true
+}];
+
+// Multiples tipos
+// cree dos tipos, uno para charles y otro para apocalipsis
+type Charles = {
+  poder: string;
+  estatura: number;
+}
+
+const charles: Charles = {
+  poder:"psiquico",
+  estatura: 1.78
+};
+
+type Apocalipsis = {
+  lider: boolean;
+  miembros: string[];
+}
+
+const apocalipsis: Apocalipsis = {
+  lider:true,
+  miembros: ["Magneto","Tormenta","Psylocke","Angel"]
+}
+
+// Mystique, debe poder ser cualquiera de esos dos mutantes (charles o apocalipsis)
+let mystique: Charles | Apocalipsis;
+
+mystique = charles;
+mystique = apocalipsis;
