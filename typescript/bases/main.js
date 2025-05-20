@@ -15,6 +15,8 @@
     };
 })();
 (() => {
+})();
+(() => {
     const client = {
         name: 'Juan',
         age: 25,
@@ -22,6 +24,9 @@
             id: 125,
             zip: 'KY2 SUD',
             city: 'Ottawa'
+        },
+        getFullAddress() {
+            return this.address.zip;
         }
     };
     const client2 = {
@@ -31,6 +36,9 @@
             id: 120,
             zip: 'K25 U2A',
             city: 'Toronto'
+        },
+        getFullAddress(id) {
+            return this.address.zip;
         }
     };
 })();
