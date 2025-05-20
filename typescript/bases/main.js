@@ -1,52 +1,37 @@
 "use strict";
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
+(() => {
+    let flash = {
+        name: 'Barry Allen',
+        age: 24,
+        powers: ['Super velocidad', 'Viajar en el tiempo'],
+    };
+    let superman = {
+        name: 'Clark Kent',
+        age: 60,
+        powers: ['Super velocidad'],
+        getName() {
+            return this.name;
         }
-    return t;
-};
-(() => {
-    const avengers = {
-        nick: 'Samuel L. Jackson',
-        ironman: 'Robert Downey Jr.',
-        vision: 'Paul Bethany',
-        activo: true,
-        poder: 1500.123123,
     };
-    const printAvenger = (_a) => {
-        var { vision } = _a, resto = __rest(_a, ["vision"]);
-        console.log(vision, resto);
-    };
-    const avengersArr = ['Cap. America', true, false];
-    const [cap, ironman, unNumero] = avengersArr;
 })();
 (() => {
-    const ironman = {
-        name: 'Tony Stark',
-        weapon: 'Armorsuit'
+    const client = {
+        name: 'Juan',
+        age: 25,
+        address: {
+            id: 125,
+            zip: 'KY2 SUD',
+            city: 'Ottawa'
+        }
     };
-    const captainAmerica = {
-        name: 'Steve Rogers',
-        weapon: 'Shield'
-    };
-    const thor = {
-        name: 'Thor Odinson',
-        weapon: 'Mjolnir',
-    };
-    const avengers = [ironman, thor, captainAmerica];
-    for (const avenger of avengers) {
-        console.log(avenger.name, avenger.weapon);
-    }
-})();
-(() => {
-    const nombre = 'Juan';
-    const getName = () => {
-        console.log('Viejo getName');
+    const client2 = {
+        name: 'Melissa',
+        age: 30,
+        address: {
+            id: 120,
+            zip: 'K25 U2A',
+            city: 'Toronto'
+        }
     };
 })();
 //# sourceMappingURL=main.js.map
